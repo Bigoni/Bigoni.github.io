@@ -11,6 +11,17 @@ let render_projects = (slug) => {
 
     let projects_obj = [
         {
+            image: 'assets/images/EventHub.jpg',
+            link: 'https://github.com/ucsdeventhub/EventHub',
+            title: 'UCSD Event Hub',
+            demo: 'http://52.34.126.224/',
+            technologies: ['Golang', 'React', 'Javascript'],
+            description: "Full stack web application created to allow UCSD undergraduates and clubs organize and hold events. Multi-user support, easy to deploy and use.",
+            categories: ['featured', 'webdev']
+        },
+
+        /*
+        {
             image: 'assets/images/mentors.jpg',
             link: 'https://github.com/abhn/Mporter',
             title: 'Mporter',
@@ -154,6 +165,7 @@ let render_projects = (slug) => {
             description: "A cross-platform desktop application that serves as a Wolfram Alpha query place and notes taker.",
             categories: ['native']
         },
+        */
     ]
 
     let projects = [];
