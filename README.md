@@ -1,17 +1,13 @@
 # Portfolio
 
-This is just a simple portfolio to show off projects I've done and skills I have
+This is just a simple portfolio to show off projects I've done and the skills I have.
 
 - [Demo](#demo)
-- [Screenshots](#screenshots)
 - [Features](#features)
 - [Installation](#installation)
 
 ### Demo
 [Bigoni.github.io](https://Bigoni.github.io)
-
-### Screenshots
-![homepage](tmp/screenshot.jpg?raw=true "Homepage")
 
 ### Features
 - Single page portfolio made with vanilla CSS and jQuery
@@ -26,4 +22,4 @@ This is just a simple portfolio to show off projects I've done and skills I have
 - You can add/remove sections from the `_layouts/default.html` file, and then adding the corresponding html file in `_includes/` directory.
 
 ### License
-GPL
+I'm just using GPL license. If you'd like to copy this repo and use if for your own projects, go ahead.

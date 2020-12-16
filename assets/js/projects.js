@@ -16,7 +16,7 @@ let render_projects = (slug) => {
             title: 'UCSD Event Hub',
             demo: 'http://52.34.126.224/',
             technologies: ['Golang', 'React', 'Javascript'],
-            description: "Full stack web application created to allow UCSD undergraduates and clubs organize and hold events. Multi-user support, easy to deploy and use.",
+            description: "Full stack web application created to allow UCSD undergraduates and clubs to organize and hold events. Backend programmed using Golang and front end created with React. Database made in SQL and deployed using SQLLite.",
             categories: ['featured', 'webdev']
         },
 
