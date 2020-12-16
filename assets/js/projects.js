@@ -28,7 +28,18 @@ let render_projects = (slug) => {
             demo: false,
             technologies: ['Machine Learning', 'Python', 'Statistics'],
             description: "Wrote a research paper for modeling competitive road cycling. Did linear regression to determine which factors had largest correlation with cycling success and then built a machine learning model to predict odds of cyling success in subsequent GC races.",
-            categories: ['featured']
+            categories: ['featured', 'ml']
+        },
+
+
+        {
+            image: 'assets/images/tetris.png',
+            link: 'https://github.com/',
+            title: 'Tetris AI',
+            demo: false,
+            technologies: ['Machine Learning', 'Python'],
+            description: "Developed a Machine Learning model for solving Tetris using TensorFlow and Keras. Used a Logistic Regression model and trained with a Residual Convolutional Neural Network(R-CNN).",
+            categories: ['featured', 'ml']
         }
 
 
