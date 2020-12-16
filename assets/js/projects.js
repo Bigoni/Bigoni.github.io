@@ -11,7 +11,7 @@ let render_projects = (slug) => {
 
     let projects_obj = [
         {
-            image: 'assets/images/EventHub.jpg',
+            image: 'assets/images/EventHub.PNG',
             link: 'https://github.com/ucsdeventhub/EventHub',
             title: 'UCSD Event Hub',
             demo: 'http://52.34.126.224/',
@@ -19,6 +19,18 @@ let render_projects = (slug) => {
             description: "Full stack web application created to allow UCSD undergraduates and clubs organize and hold events. Multi-user support, easy to deploy and use.",
             categories: ['featured', 'webdev']
         },
+
+
+        {
+            image: 'assets/images/Cycling.png',
+            link: 'https://bigoni.github.io/CyclingPaper.pdf',
+            title: 'Competitive Cycling Modeling Paper',
+            demo: false,
+            technologies: ['Machine Learning', 'Python', 'Statistics'],
+            description: "Wrote a research paper for modeling competitive road cycling. Did linear regression to determine which factors had largest correlation with cycling success and then built a machine learning model to predict odds of cyling success in subsequent GC races.",
+            categories: ['featured']
+        }
+
 
         /*
         {
