@@ -1,4 +1,215 @@
----
-layout: default
-title: Dominic Clark
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secura Aide - A Licensed Fiduciary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        header .logo {
+            float: left;
+        }
+        header .logo img {
+            height: 150px;
+            vertical-align: middle;
+        }
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+        header a {
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            align-items: center; 
+            justify-content: center; 
+            font-size: 22px;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+        }
+        header li {
+            display: inline;
+            padding: 0 20px;
+        }
+        section {
+            padding: 50px 0;
+        }
+        #hero {
+            background: url('driftwood.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #ffffff;
+        }
+        #hero .hero-content {
+            background: rgba(0,0,0,0.7);
+            padding: 2rem;
+            border-radius: 15px;
+        }
+        #hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        #about, #services, #contact {
+            background: #f4f4f4;
+        }
+        .advisor-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+        .service-box {
+            background: #fff;
+            padding: 2rem;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        form {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        input[type="submit"] {
+            background: #35424a;
+            color: #fff;
+            padding: 0.7rem 1.5rem;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background: #29353d;
+        }
+        footer {
+            background: #35424a;
+            color: #ffffff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        .gallery {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .gallery img {
+            width: 30%;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.jpg" alt="Secura Aide Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Secura Aide</h1>
+                <p>A Licensed Fiduciary - Safeguarding your financial future with expert guidance and integrity.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <img src="portrait1.jpg" alt="Financial Advisor" class="advisor-photo">
+            <div class="advisor-info">
+                <p class="advisor-name">John McManus</p>
+                <p class="advisor-designation">Licensed Fiduciary</p>
+            </div>
+            <p>At Secura Aide, we're committed to providing exceptional fiduciary services. With dedication to our clients' best interests, we ensure your financial well-being is always our top priority.</p>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="service-box">
+                <h3>Trust Management</h3>
+                <p>Expert administration of trusts to protect and grow your assets.</p>
+            </div>
+            <div class="service-box">
+                <h3>Estate Planning</h3>
+                <p>Comprehensive estate planning services tailored to your needs.</p>
+            </div>
+            <div class="service-box">
+                <h3>Investment Advisory</h3>
+                <p>Personalized investment strategies to maximize your financial growth.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <div class="container">
+            <h2>Our Commitment</h2>
+            <div class="gallery">
+                <img src="rocks.jpg" alt="Beach scene">
+                <img src="clouds.jpg" alt="Sunset">
+                <img src="sand.jpg" alt="Sandy beach">
+            </div>
+            <p>Just as we carefully manage your financial future, we appreciate the beauty and stability in nature. These images represent our commitment to providing you with a secure and peaceful financial journey.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form>
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Message" required></textarea>
+                <input type="submit" value="Send">
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>Secura Aide, A Licensed Fiduciary. Copyright &copy; 2024</p>
+    </footer>
+</body>
+</html>
