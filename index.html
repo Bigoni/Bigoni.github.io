@@ -4,13 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Secura Aide - A Licensed Fiduciary</title>
+    <link href="https://fonts.googleapis.com/css2?family=Frasa:ital,wght@1,900&display=swap" rel="stylesheet">
     <style>
+        @font-face {
+            font-family: 'Frasa';
+            src: url('Frasa-BlackItalic.otf') format('otf');
+            font-weight: 900;
+            font-style: italic;
+        }
         body {
-            font-family: Arial, sans-serif;
+            font-family: Times, serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
             color: #333;
+        }
+        h1, h2, h3 {
+            font-family: 'Frasa', sans-serif;
+            font-weight: 900;
+            font-style: italic;
         }
         .container {
             width: 80%;
@@ -18,27 +30,37 @@
             overflow: hidden;
         }
         header {
-            background: #35424a;
-            color: #ffffff;
+            background: #ffffff;
+            color: #35424a;
             padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        header .logo {
+        header .logo-container {
+            display: flex;
+            align-items: center;
             float: left;
         }
-        header .logo img {
-            height: 70px;
+        header .logo-container img {
+            height: 60px;
             vertical-align: middle;
+            margin-right: 10px;
+        }
+        header .logo-container .company-name {
+            font-family: 'Frasa', sans-serif;
+            font-size: 24px;
+            font-weight: 900;
+            font-style: italic;
         }
         header nav {
             float: right;
             margin-top: 10px;
         }
         header a {
-            color: #ffffff;
+            color: #35424a;
             text-decoration: none;
             text-transform: uppercase;
             font-size: 16px;
@@ -51,12 +73,15 @@
             display: inline;
             padding: 0 20px;
         }
+        main {
+            padding-top: 80px; /* Adjust this value based on your header height */
+        }
         section {
             padding: 50px 0;
         }
         #hero {
             background: url('driftwood.jpg') no-repeat center center/cover;
-            height: 100vh;
+            height: calc(100vh - 80px); /* Subtract header height */
             display: flex;
             align-items: center;
             text-align: center;
@@ -109,10 +134,11 @@
             background: #29353d;
         }
         footer {
-            background: #35424a;
-            color: #ffffff;
+            background: #ffffff;
+            color: #35424a;
             text-align: center;
             padding: 1rem 0;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
         }
         .gallery {
             display: flex;
@@ -129,8 +155,9 @@
 <body>
     <header>
         <div class="container">
-            <div class="logo">
+            <div class="logo-container">
                 <img src="logo.jpg" alt="Secura Aide Logo">
+                <span class="company-name">Secura Aide</span>
             </div>
             <nav>
                 <ul>
@@ -143,68 +170,74 @@
         </div>
     </header>
 
-    <section id="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Secura Aide</h1>
-                <p>A Licensed Fiduciary - Safeguarding your financial future with expert guidance and integrity.</p>
+    <main>
+        <section id="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Secura Aide</h1>
+                    <p>A Licensed Fiduciary - Safeguarding your financial future with expert guidance and integrity.</p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="about">
-        <div class="container">
-            <h2>About Us</h2>
-            <img src="portrait1.jpg" alt="Financial Advisor" class="advisor-photo">
-            <div class="advisor-info">
-                <p class="advisor-name">John McManus</p>
-                <p class="advisor-designation">Licensed Fiduciary</p>
+        <section id="about">
+            <div class="container">
+                <h2>About Us</h2>
+                <img src="portrait1.jpg" alt="Financial Advisor" class="advisor-photo">
+                <div class="advisor-info">
+                    <p class="advisor-name">John McManus</p>
+                    <p class="advisor-designation">Licensed Fiduciary, No. 1431</p>
+                </div>
+                <p>I was born in Oregon in 1997, raised in California's Central Coast for more than a decade along with my sister. My parents are involved in wealth, my dad in finance and my mother in accounting work. I attended Cuesta for 4 years, then graduated from Cal Poly in 2021 with a bachelor's degree in business administration, finance. From then on, I joined my father in his financial practice, earning the series 65 and the trust of his clients. I'm also a member of Cayucos Lions Club, serving as their Treasurer from 2021 to present day.</p>
             </div>
-            <p>At Secura Aide, we're committed to providing exceptional fiduciary services. With dedication to our clients' best interests, we ensure your financial well-being is always our top priority.</p>
-        </div>
-    </section>
+        </section>
 
-    <section id="services">
-        <div class="container">
-            <h2>Our Services</h2>
-            <div class="service-box">
-                <h3>Trust Management</h3>
-                <p>Expert administration of trusts to protect and grow your assets.</p>
+        <section id="services">
+            <div class="container">
+                <h2>Our Services</h2>
+                <div class="service-box">
+                    <h3>Trust Management</h3>
+                    <p>Expert administration of trusts to protect and grow your assets.</p>
+                </div>
+                <div class="service-box">
+                    <h3>Estate Planning</h3>
+                    <p>Comprehensive estate planning services tailored to your needs.</p>
+                </div>
+                <div class="service-box">
+                    <h3>Investment Advisory</h3>
+                    <p>Personalized investment strategies to maximize your financial growth.</p>
+                </div>
+                <div class="service-box">
+                    <h3>Fee Schedule</h3>
+                    <p>For detailed information about our fees, please refer to our <a href="fee_schedule.pdf" target="_blank">Fee Schedule PDF</a>.</p>
+                </div>
             </div>
-            <div class="service-box">
-                <h3>Estate Planning</h3>
-                <p>Comprehensive estate planning services tailored to your needs.</p>
-            </div>
-            <div class="service-box">
-                <h3>Investment Advisory</h3>
-                <p>Personalized investment strategies to maximize your financial growth.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="gallery">
-        <div class="container">
-            <h2>Our Commitment</h2>
-            <div class="gallery">
-                <img src="rocks.jpg" alt="Beach scene">
-                <img src="clouds.jpg" alt="Sunset">
-                <img src="sand.jpg" alt="Sandy beach">
+        <section id="gallery">
+            <div class="container">
+                <h2>Our Commitment</h2>
+                <div class="gallery">
+                    <img src="rocks.jpg" alt="Beach scene">
+                    <img src="clouds.jpg" alt="Sunset">
+                    <img src="sand.jpg" alt="Sandy beach">
+                </div>
+                <p>Just as we carefully manage your financial future, we appreciate the beauty and stability in nature. These images represent our commitment to providing you with a secure and peaceful financial journey.</p>
             </div>
-            <p>Just as we carefully manage your financial future, we appreciate the beauty and stability in nature. These images represent our commitment to providing you with a secure and peaceful financial journey.</p>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <form>
-                <input type="text" placeholder="Name" required>
-                <input type="email" placeholder="Email" required>
-                <textarea placeholder="Message" required></textarea>
-                <input type="submit" value="Send">
-            </form>
-        </div>
-    </section>
+        <section id="contact">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <form>
+                    <input type="text" placeholder="Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <textarea placeholder="Message" required></textarea>
+                    <input type="submit" value="Send">
+                </form>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <p>Secura Aide, A Licensed Fiduciary. Copyright &copy; 2024</p>
