@@ -150,6 +150,46 @@
             margin-bottom: 1rem;
             border-radius: 10px;
         }
+        .about-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+        .advisor-photo,
+        .company-logo {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+        .company-logo {
+            object-fit: contain;
+        }
+        .advisor-info {
+            text-align: center;
+            max-width: 800px;
+        }
+        
+        /* Bio section styles */
+        .bio-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+        }
+        .bio-container .advisor-photo {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+        }
+        .bio-container .advisor-info {
+            flex-grow: 1;
+            text-align: left;
+        }
     </style>
 </head>
 <body>
@@ -183,26 +223,30 @@
         <section id="about">
             <div class="container">
                 <h2>About Secura Aide</h2>
-                <img src="portrait1.jpg" alt="Financial Advisor" class="advisor-photo">
-                <div class="advisor-info">
-                    <p class="advisor-name">John McManus</p>
-                    <p class="advisor-designation">Licensed Fiduciary, No. 1431</p>
+                <div class="about-container">
+                    <div class="image-container">
+                        <img src="portrait1.jpg" alt="Financial Advisor" class="advisor-photo">
+                        <img src="logo1_transparent.png" alt="Secura Aide Logo" class="company-logo">
+                    </div>
+                    <div class="advisor-info">
+                        <p>We offer professional fiduciary services for those living in the Central Coast, be it for trusts, estates, conservatorships, or POA agreements. Our focus is on the estate, which includes your house, car, stocks, bonds, and savings.</p>
+                    </div>
                 </div>
-                <p>I offer professional fiduciary services for those living in the Central Coast, be it for trusts, estates, conservatorships, or POA agreements. My focus is on the estate, which includes your house, car, stocks, bonds, and savings.</p>
             </div>
         </section>
-        
+
         <section id="mission">
             <div class="container">
                 <h2>Our Mission</h2>
-                <p>We aim to give our clients long-term happiness by servicing their financial, welfare, and health needs.</p>
+                <p>Secura Aide's mission is to give its clients long term happiness.</p>
                 <h3>Strategy</h3>
-                <p>This will be achieved by understanding your goals, needs, and desires, and utilizing available resources effectively.</p>
+                <p>Its strategy is to service your financial, welfare, and health needs.</p>
                 <h3>Vision</h3>
+                <p>Our Vision involves three phases:</p>
                 <ol>
-                    <li>Understanding your goals, needs, and desires, and the resources available.</li>
-                    <li>Developing a written plan to accomplish those goals, needs, and desires.</li>
-                    <li>Continuing to meet and adjust the plan as necessary to stay aligned with your objectives.</li>
+                    <li>We meet with you to understand your goals, needs, and desires, as well as the resources available.</li>
+                    <li>Develop a written plan which aims to accomplish those goals, needs, and desires with all available resources.</li>
+                    <li>We continue to meet with you to discuss, change, and maintain the plan as it relates to your goals, needs, and desires.</li>
                 </ol>
             </div>
         </section>
@@ -229,16 +273,17 @@
             </div>
         </section>
         
-
-        <section id="gallery">
+        <section id="bio">
             <div class="container">
-                <h2>Our Commitment</h2>
-                <div class="gallery">
-                    <img src="rocks.jpg" alt="Beach scene">
-                    <img src="clouds.jpg" alt="Sunset">
-                    <img src="sand.jpg" alt="Sandy beach">
+                <h2>About John McManus</h2>
+                <div class="bio-container">
+                    <img src="portrait2.jpg" alt="John McManus" class="advisor-photo">
+                    <div class="advisor-info">
+                        <p>John was born Oregon in 1997, raised in California's Central Coast for more than a decade along my sister. His parents are involved in wealth, my dad in finance and my mother in accounting work. He attended Cuesta for 4 years, then graduated from Cal Poly in 2021 with a bachelor's degree in business administration, finance. From then on, he joined his father's financial practice, earning the series 65 and the trust of his clients. He's also a member of Cayucos Lions Club, serving as their Treasurer from 2021 to present day.</p>
+                        <p class="advisor-name">John McManus</p>
+                        <p class="advisor-designation">Licensed Fiduciary, No. 1431</p>
+                    </div>
                 </div>
-                <p>Just as we carefully manage your financial future, we appreciate the beauty and stability in nature. These images represent our commitment to providing you with a secure and peaceful financial journey.</p>
             </div>
         </section>
 
