@@ -190,6 +190,23 @@
             flex-grow: 1;
             text-align: left;
         }
+        .contact-info {
+            background: #f4f4f4;
+            padding: 2rem;
+            margin-top: 2rem;
+            border-radius: 10px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 2rem;
+        }
+        .gallery img {
+            width: 30%;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
@@ -296,10 +313,27 @@
                     <textarea placeholder="Message" required></textarea>
                     <input type="submit" value="Send">
                 </form>
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>Phone: (805) 504-1220</p>
+                    <p>Fax: (805) 504-1457</p>
+                    <p>Email: John@securaaide.com</p>
+                    <p>Mail: 696 So. Ocean Ave., Cayucos, CA 93430</p>
+                </div>
             </div>
         </section>
     </main>
 
+    <section id="gallery">
+        <div class="container">
+            <div class="gallery">
+                <img src="rocks.jpg" alt="Nature Scape 1">
+                <img src="sand.jpg" alt="Nature Scape 2">
+                <img src="foiling.jpg" alt="Nature Scape 3">
+                <!-- Add more images as needed -->
+            </div>
+        </div>
+    </section>
     <footer>
         <p>Secura Aide, A Licensed Fiduciary. Copyright &copy; 2024</p>
     </footer>
