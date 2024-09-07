@@ -183,20 +183,47 @@
             max-width: 800px;
         }
         
-        /* Bio section styles */
         .bio-container {
             display: flex;
-            align-items: flex-start;
+            flex-direction: column;
+            align-items: center;
             gap: 2rem;
         }
+
+        .bio-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
         .bio-container .advisor-photo {
             width: 250px;
             height: 250px;
             object-fit: cover;
+            margin-bottom: 1rem;
         }
+
         .bio-container .advisor-info {
             flex-grow: 1;
-            text-align: left;
+            max-width: 800px;
+        }
+
+        @media (min-width: 768px) {
+            .bio-container {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+
+            .bio-content {
+                flex-direction: row;
+                text-align: left;
+            }
+
+            .bio-container .advisor-photo {
+                margin-bottom: 0;
+                margin-right: 2rem;
+            }
         }
         .contact-info {
             background: #f4f4f4;
@@ -301,16 +328,17 @@
             <div class="container">
                 <h2>About John McManus</h2>
                 <div class="bio-container">
-                    <img src="portrait2.jpg" alt="John McManus" class="advisor-photo">
-                    <div class="advisor-info">
-                        <p>John was born Oregon in 1997, raised in California’s Central Coast for more than a decade along my sister. His parents are involved in wealth, his father in finance and his mother in accounting. He attended Cuesta for 4 years, then graduated from Cal Poly in 2021 with a bachelor’s degree in business administration, finance. From then on, he joined his father’s financial practice, earning the series 65 and the trust of his clients. He’s also a member of Cayucos Lions Club, serving as their Treasurer from 2021 to present day.</p>
-                        <p class="advisor-name">John McManus</p>
-                        <p class="advisor-designation">Licensed Fiduciary, No. 1431</p>
+                    <div class="bio-content">
+                        <img src="portrait2.jpg" alt="John McManus" class="advisor-photo">
+                        <div class="advisor-info">
+                            <p>John was born Oregon in 1997, raised in California's Central Coast for more than a decade along my sister. His parents are involved in wealth, his father in finance and his mother in accounting. He attended Cuesta for 4 years, then graduated from Cal Poly in 2021 with a bachelor's degree in business administration, finance. From then on, he joined his father's financial practice, earning the series 65 and the trust of his clients. He's also a member of Cayucos Lions Club, serving as their Treasurer from 2021 to present day.</p>
+                            <p class="advisor-name">John McManus</p>
+                            <p class="advisor-designation">Licensed Fiduciary, No. 1431</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-
         <section id="contact">
             <div class="container">
                 <h2>Contact Us</h2>
