@@ -75,21 +75,20 @@
             padding: 0 20px;
         }
         main {
-            padding-top: 80px; /* Adjust this value based on your header height */
+            padding-top: 80px;
         }
         section {
             padding: 50px 0;
         }
         html {
-            scroll-padding-top: 80px; /* Adjust this value to match your header height */
+            scroll-padding-top: 80px;
         }
-
         #hero {
-            padding-top: 0; /* Reset padding for hero section */
+            padding-top: 0;
         }
         #hero {
             background: url('driftwood.jpg') no-repeat center center/cover;
-            height: calc(100vh - 80px); /* Subtract header height */
+            height: calc(100vh - 80px);
             display: flex;
             align-items: center;
             text-align: center;
@@ -186,44 +185,37 @@
             max-width: 100%;
             padding: 0 1rem;
         }
-        
         .bio-container {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 2rem;
         }
-
         .bio-content {
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
         }
-
         .bio-container .advisor-photo {
             width: 250px;
             height: 250px;
             object-fit: cover;
             margin-bottom: 1rem;
         }
-
         .bio-container .advisor-info {
             flex-grow: 1;
             max-width: 800px;
         }
-
         @media (min-width: 768px) {
             .bio-container {
                 flex-direction: row;
                 align-items: flex-start;
             }
-
             .bio-content {
                 flex-direction: row;
                 text-align: left;
             }
-
             .bio-container .advisor-photo {
                 margin-bottom: 0;
                 margin-right: 2rem;
@@ -234,13 +226,11 @@
                 flex-direction: row;
                 justify-content: center;
             }
-
             .advisor-photo,
             .company-logo {
                 width: 200px;
                 height: 200px;
             }
-
             .advisor-info {
                 max-width: 800px;
                 padding: 0;
@@ -262,6 +252,106 @@
             margin-bottom: 1rem;
             border-radius: 10px;
         }
+
+        /* ── Blog preview section ── */
+        #blog-preview {
+            background: #fff;
+        }
+        .blog-preview-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 1.5rem;
+        }
+        .blog-preview-header h2 {
+            margin: 0;
+        }
+        .blog-preview-header a {
+            font-family: Times, serif;
+            font-size: 0.95rem;
+            color: #35424a;
+            text-decoration: underline;
+        }
+        .blog-preview-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .blog-preview-card {
+            background: #f4f4f4;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.07);
+            display: flex;
+            flex-direction: column;
+        }
+        .blog-preview-card-img {
+            height: 130px;
+            background: #d0d9dd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .blog-preview-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .blog-preview-card-body {
+            padding: 1.1rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .blog-preview-tag {
+            display: inline-block;
+            font-family: Times, serif;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #8a9aa3;
+            margin-bottom: 0.4rem;
+        }
+        .blog-preview-card h3 {
+            font-size: 1rem;
+            margin: 0 0 0.5rem;
+            line-height: 1.35;
+            color: #35424a;
+        }
+        .blog-preview-card p {
+            font-size: 0.88rem;
+            color: #555;
+            flex: 1;
+            margin: 0 0 0.9rem;
+        }
+        .blog-preview-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #e0e0e0;
+            padding-top: 0.6rem;
+            margin-top: auto;
+        }
+        .blog-preview-date {
+            font-family: Times, serif;
+            font-size: 0.78rem;
+            color: #aaa;
+        }
+        .blog-preview-link {
+            font-family: Times, serif;
+            font-size: 0.85rem;
+            color: #35424a;
+            text-decoration: none;
+        }
+        .blog-preview-link:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .blog-preview-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -276,6 +366,7 @@
                     <li><a href="#hero">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
+                    <li><a href="blog.html">Blog</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -322,7 +413,7 @@
                 </ol>
             </div>
         </section>
-        
+
         <section id="services">
             <div class="container">
                 <h2>Our Services</h2>
@@ -344,7 +435,61 @@
                 </div>
             </div>
         </section>
-        
+
+        <!-- Blog preview section -->
+        <section id="blog-preview">
+            <div class="container">
+                <div class="blog-preview-header">
+                    <h2>Resources &amp; Insights</h2>
+                    <a href="blog.html">View all posts →</a>
+                </div>
+                <div class="blog-preview-grid">
+                    <article class="blog-preview-card">
+                        <div class="blog-preview-card-img">
+                            <!-- <img src="blog/post1-hero.jpg" alt="Fiduciary basics"> -->
+                        </div>
+                        <div class="blog-preview-card-body">
+                            <span class="blog-preview-tag">Fiduciary Basics</span>
+                            <h3>What does a licensed fiduciary actually do?</h3>
+                            <p>A licensed fiduciary is legally obligated to act in your best interest — not their own. Here's what that means for your trust or estate.</p>
+                            <div class="blog-preview-card-footer">
+                                <span class="blog-preview-date">June 2025</span>
+                                <a href="blog/what-does-a-fiduciary-do.html" class="blog-preview-link">Read more →</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="blog-preview-card">
+                        <div class="blog-preview-card-img">
+                            <!-- <img src="blog/trust-post.jpg" alt="Setting up a trust"> -->
+                        </div>
+                        <div class="blog-preview-card-body">
+                            <span class="blog-preview-tag">Trusts</span>
+                            <h3>When should you set up a trust?</h3>
+                            <p>Trusts aren't just for the wealthy. Learn when a revocable living trust makes sense for Central Coast families.</p>
+                            <div class="blog-preview-card-footer">
+                                <span class="blog-preview-date">May 2025</span>
+                                <a href="blog/when-to-set-up-a-trust.html" class="blog-preview-link">Read more →</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="blog-preview-card">
+                        <div class="blog-preview-card-img">
+                            <!-- <img src="blog/poa-post.jpg" alt="Power of attorney"> -->
+                        </div>
+                        <div class="blog-preview-card-body">
+                            <span class="blog-preview-tag">Power of Attorney</span>
+                            <h3>Understanding your power of attorney options</h3>
+                            <p>Health POA vs. financial POA — what's the difference and why having both matters as you age.</p>
+                            <div class="blog-preview-card-footer">
+                                <span class="blog-preview-date">April 2025</span>
+                                <a href="blog/power-of-attorney-options.html" class="blog-preview-link">Read more →</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
         <section id="bio">
             <div class="container">
                 <h2>About John McManus</h2>
@@ -360,6 +505,7 @@
                 </div>
             </div>
         </section>
+
         <section id="contact">
             <div class="container">
                 <h2>Contact Us</h2>
@@ -379,10 +525,10 @@
                 <img src="rocks.jpg" alt="Nature Scape 1">
                 <img src="sand.jpg" alt="Nature Scape 2">
                 <img src="foiling.jpg" alt="Nature Scape 3">
-                <!-- Add more images as needed -->
             </div>
         </div>
     </section>
+
     <footer>
         <p>Secura Aide, A Licensed Fiduciary. Copyright &copy; 2024</p>
     </footer>

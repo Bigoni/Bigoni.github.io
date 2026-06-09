@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What does a licensed fiduciary actually do? - Secura Aide</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.png">
+    <style>
+        @font-face {
+            font-family: 'Frasa';
+            src: url('../Frasa-BlackItalic.otf') format('otf');
+            font-weight: 900;
+            font-style: italic;
+        }
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Times, serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background: #f4f4f4;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Frasa', sans-serif;
+            font-weight: 900;
+            font-style: italic;
+        }
+        a {
+            color: #35424a;
+            text-decoration: none;
+        }
+        .container {
+            width: 80%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* ── Header ── */
+        header {
+            background: #ffffff;
+            color: #35424a;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        header .logo-container {
+            display: flex;
+            align-items: center;
+            float: left;
+        }
+        header .logo-container img {
+            height: 60px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        header .logo-container .company-name {
+            font-family: 'Frasa', sans-serif;
+            font-size: 24px;
+            font-weight: 900;
+            font-style: italic;
+        }
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+        header a {
+            color: #35424a;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+        }
+        header li {
+            display: inline;
+            padding: 0 20px;
+        }
+        header li a.active {
+            border-bottom: 2px solid #35424a;
+            padding-bottom: 2px;
+        }
+
+        /* ── Page layout ── */
+        main {
+            padding-top: 80px;
+        }
+
+        /* ── Post hero ── */
+        .post-hero {
+            background: #35424a;
+            color: #fff;
+            padding: 50px 0 40px;
+        }
+        .post-hero .breadcrumb {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 1rem;
+        }
+        .post-hero .breadcrumb a {
+            color: rgba(255,255,255,0.6);
+        }
+        .post-hero .breadcrumb a:hover {
+            color: #fff;
+        }
+        .post-tag {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            color: rgba(255,255,255,0.9);
+            font-family: Times, serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 4px 12px;
+            border-radius: 3px;
+            margin-bottom: 1rem;
+        }
+        .post-hero h1 {
+            font-size: 2.6rem;
+            margin: 0 0 1rem;
+            line-height: 1.2;
+            color: #fff;
+            max-width: 700px;
+        }
+        .post-meta {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+        }
+        .post-meta span {
+            margin-right: 1.5rem;
+        }
+
+        /* ── Post body layout ── */
+        .post-layout {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 30px;
+            padding: 40px 0 60px;
+            align-items: start;
+        }
+
+        /* ── Article content ── */
+        article.post-content {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 2.5rem 3rem;
+        }
+        article.post-content p {
+            margin: 0 0 1.4rem;
+            font-size: 1.05rem;
+        }
+        article.post-content h2 {
+            font-size: 1.5rem;
+            margin: 2rem 0 0.75rem;
+            color: #35424a;
+        }
+        article.post-content h3 {
+            font-size: 1.15rem;
+            margin: 1.5rem 0 0.5rem;
+            color: #35424a;
+        }
+        article.post-content ul,
+        article.post-content ol {
+            margin: 0 0 1.4rem 1.5rem;
+            font-size: 1.05rem;
+        }
+        article.post-content li {
+            margin-bottom: 0.5rem;
+        }
+        .callout {
+            background: #f4f4f4;
+            border-left: 4px solid #35424a;
+            padding: 1.25rem 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+        .callout p {
+            margin: 0;
+            font-style: italic;
+            color: #555;
+        }
+        .post-divider {
+            border: none;
+            border-top: 1px solid #f0f0f0;
+            margin: 2rem 0;
+        }
+        .post-footer-cta {
+            background: #35424a;
+            color: #fff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .post-footer-cta h3 {
+            color: #fff;
+            margin: 0 0 0.5rem;
+            font-size: 1.3rem;
+        }
+        .post-footer-cta p {
+            color: rgba(255,255,255,0.85);
+            margin: 0 0 1rem;
+            font-size: 0.95rem;
+        }
+        .cta-btn {
+            display: inline-block;
+            background: #fff;
+            color: #35424a;
+            padding: 0.6rem 1.5rem;
+            border-radius: 4px;
+            font-family: Times, serif;
+            font-weight: bold;
+            font-size: 0.95rem;
+            transition: background 0.2s;
+        }
+        .cta-btn:hover {
+            background: #e8e8e8;
+        }
+
+        /* ── Back link ── */
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            color: #35424a;
+        }
+        .back-link:hover { text-decoration: underline; }
+
+        /* ── Sidebar ── */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .sidebar-widget {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+        }
+        .sidebar-widget h3 {
+            font-size: 1rem;
+            margin: 0 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #f0f0f0;
+            color: #35424a;
+        }
+        .sidebar-widget p {
+            font-size: 0.9rem;
+            color: #555;
+            margin: 0 0 1rem;
+        }
+        .sidebar-contact-link {
+            display: block;
+            font-size: 0.9rem;
+            color: #35424a;
+            text-decoration: underline;
+        }
+        .related-posts-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .related-posts-list li {
+            padding: 0.6rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 0.9rem;
+        }
+        .related-posts-list li:last-child {
+            border-bottom: none;
+        }
+        .related-posts-list a {
+            color: #35424a;
+        }
+        .related-posts-list a:hover {
+            text-decoration: underline;
+        }
+        .related-post-tag {
+            display: block;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #aaa;
+            margin-top: 2px;
+        }
+        .contact-details {
+            font-size: 0.88rem;
+            color: #555;
+            line-height: 2;
+        }
+
+        /* ── Footer ── */
+        footer {
+            background: #ffffff;
+            color: #35424a;
+            text-align: center;
+            padding: 1rem 0;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 900px) {
+            .post-layout {
+                grid-template-columns: 1fr;
+            }
+            article.post-content {
+                padding: 1.75rem;
+            }
+        }
+        @media (max-width: 600px) {
+            .container { width: 92%; }
+            header nav { display: none; }
+            .post-hero h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <img src="../SecuraAide_LOGO_Bullet.png" alt="Secura Aide Logo">
+                <span class="company-name">Secura Aide</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#services">Services</a></li>
+                    <li><a href="../blog.html" class="active">Blog</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="post-hero">
+            <div class="container">
+                <p class="breadcrumb"><a href="../blog.html">← Blog</a> &nbsp;/&nbsp; Fiduciary Basics</p>
+                <span class="post-tag">Fiduciary Basics</span>
+                <h1>What does a licensed fiduciary actually do?</h1>
+                <div class="post-meta">
+                    <span>By John McManus</span>
+                    <span>June 2025</span>
+                    <span>5 min read</span>
+                </div>
+            </div>
+        </section>
+
+        <section style="padding: 0;">
+            <div class="container">
+                <div class="post-layout">
+
+                    <article class="post-content">
+
+                        <p>If you've been searching for help managing a trust, estate, or conservatorship, you've probably come across the term "fiduciary." But what does a licensed fiduciary actually do — and how is that different from a financial advisor or an attorney?</p>
+
+                        <p>The short answer: a licensed fiduciary is someone legally appointed to manage assets or make decisions on behalf of another person, with a legal obligation to act solely in that person's best interest. Not their own. Not their firm's. Yours.</p>
+
+                        <div class="callout">
+                            <p>"Fiduciary" comes from the Latin <em>fiducia</em>, meaning trust. It's not just a job title — it's a legal standard of care.</p>
+                        </div>
+
+                        <h2>The fiduciary standard vs. the suitability standard</h2>
+
+                        <p>Many financial advisors operate under what's called the "suitability standard" — meaning their recommendations only need to be suitable for your situation, not necessarily the best option available. A fiduciary is held to a higher bar: the <strong>fiduciary standard</strong>, which requires acting with undivided loyalty and care.</p>
+
+                        <p>In California, licensed fiduciaries are regulated by the Professional Fiduciaries Bureau. License No. 1431 is your assurance that your fiduciary has met those standards and is subject to ongoing oversight.</p>
+
+                        <h2>What a fiduciary actually manages</h2>
+
+                        <p>A licensed fiduciary can be appointed to manage a wide range of matters, depending on the agreement or court appointment in place:</p>
+
+                        <ul>
+                            <li><strong>Trusts</strong> — managing assets held in a revocable or irrevocable trust, distributing assets to beneficiaries, filing trust tax returns, and keeping detailed records</li>
+                            <li><strong>Estates</strong> — acting as executor or administrator for a deceased person's estate, paying debts, and distributing what remains</li>
+                            <li><strong>Conservatorships</strong> — managing the finances or personal care decisions of someone who is no longer able to do so themselves</li>
+                            <li><strong>Power of Attorney</strong> — stepping in as agent under a durable power of attorney to handle financial or healthcare decisions</li>
+                        </ul>
+
+                        <h2>When does a professional fiduciary make sense?</h2>
+
+                        <p>Families often ask a relative or close friend to serve as trustee or executor — and that can work well. But there are situations where a professional fiduciary is the better choice:</p>
+
+                        <ol>
+                            <li><strong>There's family conflict.</strong> A neutral third party removes the burden from family members and reduces the risk of disputes.</li>
+                            <li><strong>The estate is complex.</strong> Real property, investments, a business, or assets in multiple states require careful, ongoing management.</li>
+                            <li><strong>No one is available.</strong> If there's no trusted family member nearby or willing to take on the role, a professional fiduciary fills the gap.</li>
+                            <li><strong>You want accountability.</strong> A licensed fiduciary is bonded, insured, and subject to state oversight — providing a level of accountability that informal arrangements don't.</li>
+                        </ol>
+
+                        <hr class="post-divider">
+
+                        <h2>What working with Secura Aide looks like</h2>
+
+                        <p>At Secura Aide, the process starts with a conversation. We meet with you — and your family, if appropriate — to understand your goals, your assets, and your concerns. From there, we put together a written plan and continue meeting with you to adjust it over time.</p>
+
+                        <p>Our focus is on the estate: your home, vehicle, investment accounts, and savings. We handle the administrative and financial work so your family doesn't have to.</p>
+
+                        <p>If you're on the Central Coast and wondering whether a licensed fiduciary is right for your situation, we're happy to talk through it — no obligation.</p>
+
+                        <div class="post-footer-cta">
+                            <h3>Have questions about your trust or estate?</h3>
+                            <p>John McManus is a licensed fiduciary serving the Central Coast. Reach out for a no-obligation conversation.</p>
+                            <a href="../index.html#contact" class="cta-btn">Get in touch</a>
+                        </div>
+
+                    </article>
+
+                    <!-- Sidebar -->
+                    <aside class="sidebar">
+
+                        <div class="sidebar-widget">
+                            <h3>About John McManus</h3>
+                            <p>Licensed Fiduciary, No. 1431. Serving the Central Coast with trustee, conservator, and agent services.</p>
+                            <a href="../index.html#contact" class="sidebar-contact-link">Contact John →</a>
+                        </div>
+
+                        <div class="sidebar-widget">
+                            <h3>Related posts</h3>
+                            <ul class="related-posts-list">
+                                <li>
+                                    <a href="when-to-set-up-a-trust.html">When should you set up a trust?</a>
+                                    <span class="related-post-tag">Trusts</span>
+                                </li>
+                                <li>
+                                    <a href="power-of-attorney-options.html">Understanding your power of attorney options</a>
+                                    <span class="related-post-tag">Power of Attorney</span>
+                                </li>
+                                <li>
+                                    <a href="what-a-successor-trustee-does.html">What a successor trustee actually does</a>
+                                    <span class="related-post-tag">Trusts</span>
+                                </li>
+                                <li>
+                                    <a href="when-conservatorship-makes-sense.html">When does conservatorship make sense?</a>
+                                    <span class="related-post-tag">Conservatorship</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="sidebar-widget">
+                            <h3>Contact</h3>
+                            <div class="contact-details">
+                                <div>(805) 504-1220</div>
+                                <div>John@securaaide.com</div>
+                                <div>696 So. Ocean Ave.</div>
+                                <div>Cayucos, CA 93430</div>
+                            </div>
+                        </div>
+
+                    </aside>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Secura Aide, A Licensed Fiduciary. Copyright &copy; 2024</p>
+    </footer>
+
+</body>
+</html>
