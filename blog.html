@@ -44,10 +44,14 @@
             z-index: 1000;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
+        header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
         header .logo-container {
             display: flex;
             align-items: center;
-            float: left;
         }
         header .logo-container img {
             height: 60px;
@@ -60,14 +64,14 @@
             font-style: italic;
             color: #35424a;
         }
-        header nav { float: right; margin-top: 10px; }
+        header nav { margin-top: 0; }
         header a {
             color: #35424a;
             text-decoration: none;
             text-transform: uppercase;
             font-size: 16px;
         }
-        header ul { padding: 0; list-style: none; }
+        header ul { padding: 0; list-style: none; margin: 0; }
         header li { display: inline; padding: 0 20px; }
         header li a.active {
             border-bottom: 2px solid #35424a;
@@ -87,14 +91,22 @@
         .blog-hero p { font-size: 1.1rem; opacity: 0.85; margin: 0; }
 
         /* ── Body layout ── */
-        .blog-body {
-            padding: 40px 0 60px;
-        }
+        .blog-body { padding: 40px 0 60px; }
         .blog-layout {
             display: grid;
             grid-template-columns: 1fr 280px;
             gap: 30px;
             align-items: start;
+        }
+
+        /* ── Loading / error states ── */
+        #status-msg {
+            background: #fff;
+            border-radius: 10px;
+            padding: 2.5rem;
+            text-align: center;
+            color: #aaa;
+            font-size: 1rem;
         }
 
         /* ── Post list ── */
@@ -103,7 +115,6 @@
             flex-direction: column;
             gap: 20px;
         }
-
         .post-row {
             background: #fff;
             border-radius: 10px;
@@ -112,9 +123,7 @@
             overflow: hidden;
             transition: box-shadow 0.2s;
         }
-        .post-row:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.13);
-        }
+        .post-row:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.13); }
         .post-row-img {
             width: 200px;
             min-width: 200px;
@@ -124,11 +133,7 @@
             justify-content: center;
             overflow: hidden;
         }
-        .post-row-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        .post-row-img img { width: 100%; height: 100%; object-fit: cover; }
         .post-row-body {
             padding: 1.4rem 1.6rem;
             flex: 1;
@@ -178,7 +183,6 @@
         }
         .read-more-link:hover { text-decoration: underline; }
 
-        /* Empty state */
         #empty-state {
             display: none;
             background: #fff;
@@ -209,15 +213,8 @@
             transition: background 0.15s, border-color 0.15s;
         }
         .page-btn:hover { background: #f0f0f0; }
-        .page-btn.active {
-            background: #35424a;
-            color: #fff;
-            border-color: #35424a;
-        }
-        .page-btn:disabled {
-            opacity: 0.35;
-            cursor: default;
-        }
+        .page-btn.active { background: #35424a; color: #fff; border-color: #35424a; }
+        .page-btn:disabled { opacity: 0.35; cursor: default; }
 
         /* ── Sidebar ── */
         .sidebar {
@@ -240,11 +237,7 @@
             border-bottom: 2px solid #f0f0f0;
             color: #35424a;
         }
-        .tag-filters {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
+        .tag-filters { display: flex; flex-wrap: wrap; gap: 8px; }
         .tag-btn {
             font-family: Times, serif;
             font-size: 0.85rem;
@@ -257,31 +250,11 @@
             transition: background 0.15s, color 0.15s, border-color 0.15s;
         }
         .tag-btn:hover { background: #e0e6e9; }
-        .tag-btn.active {
-            background: #35424a;
-            color: #fff;
-            border-color: #35424a;
-        }
-        .tag-count {
-            font-size: 0.75rem;
-            opacity: 0.7;
-            margin-left: 2px;
-        }
-        .sidebar-widget p {
-            font-size: 0.9rem;
-            color: #555;
-            margin: 0 0 1rem;
-        }
-        .sidebar-contact-link {
-            font-size: 0.9rem;
-            color: #35424a;
-            text-decoration: underline;
-        }
-        .contact-details {
-            font-size: 0.88rem;
-            color: #555;
-            line-height: 2;
-        }
+        .tag-btn.active { background: #35424a; color: #fff; border-color: #35424a; }
+        .tag-count { font-size: 0.75rem; opacity: 0.7; margin-left: 2px; }
+        .sidebar-widget p { font-size: 0.9rem; color: #555; margin: 0 0 1rem; }
+        .sidebar-contact-link { font-size: 0.9rem; color: #35424a; text-decoration: underline; }
+        .contact-details { font-size: 0.88rem; color: #555; line-height: 2; }
 
         /* ── Footer ── */
         footer {
@@ -337,15 +310,12 @@
     <section class="blog-body">
         <div class="container">
             <div class="blog-layout">
-
-                <!-- Post list + pagination -->
                 <div>
+                    <div id="status-msg">Loading posts...</div>
                     <div id="post-list"></div>
                     <div id="empty-state">No posts found for this topic.</div>
                     <div id="pagination"></div>
                 </div>
-
-                <!-- Sidebar -->
                 <aside class="sidebar">
                     <div class="sidebar-widget">
                         <h3>Filter by topic</h3>
@@ -366,7 +336,6 @@
                         </div>
                     </div>
                 </aside>
-
             </div>
         </div>
     </section>
@@ -377,88 +346,75 @@
 </footer>
 
 <script>
-    // ── Post data ──────────────────────────────────────────────
-    // To add a new post: copy one object, fill in the fields, and
-    // add it to the front of this array (newest first).
-    const POSTS = [
-        {
-            title: "What does a licensed fiduciary actually do?",
-            tag: "Fiduciary Basics",
-            date: "June 2025",
-            excerpt: "Many people confuse fiduciaries with financial advisors. A licensed fiduciary is legally obligated to act solely in your best interest — not their own. Here's what that means for your trust, estate, or conservatorship.",
-            url: "blog/what-does-a-fiduciary-do.html",
-            image: "" // e.g. "blog/post1-hero.jpg"
-        },
-        {
-            title: "When should you set up a trust?",
-            tag: "Trusts",
-            date: "May 2025",
-            excerpt: "Trusts aren't just for the wealthy. A revocable living trust can protect your home, savings, and other assets from the delays and costs of probate — and keep family decisions private. Here's when it makes sense.",
-            url: "blog/when-to-set-up-a-trust.html",
-            image: ""
-        },
-        {
-            title: "Understanding your power of attorney options",
-            tag: "Power of Attorney",
-            date: "April 2025",
-            excerpt: "Health POA vs. financial POA — what's the difference, and why having both in place matters as you or a loved one ages. A plain-language guide to your options under California law.",
-            url: "blog/power-of-attorney-options.html",
-            image: ""
-        },
-        {
-            title: "Will vs. living trust: which one do you need?",
-            tag: "Estates",
-            date: "March 2025",
-            excerpt: "Both a will and a living trust control what happens to your assets after you die — but they work very differently. Here's a straightforward breakdown to help you decide which is right for your situation.",
-            url: "blog/will-vs-living-trust.html",
-            image: ""
-        },
-        {
-            title: "When does conservatorship make sense?",
-            tag: "Conservatorship",
-            date: "February 2025",
-            excerpt: "Conservatorship is often misunderstood — and sometimes feared. This post explains when a court-appointed conservator is appropriate, what the process looks like in California, and what rights are preserved.",
-            url: "blog/when-conservatorship-makes-sense.html",
-            image: ""
-        },
-        {
-            title: "What a successor trustee actually does",
-            tag: "Trusts",
-            date: "January 2025",
-            excerpt: "Being named a successor trustee is an honor — and a significant legal responsibility. Here's what the role involves day to day, and why a professional trustee may be the right choice for complex estates.",
-            url: "blog/what-a-successor-trustee-does.html",
-            image: ""
-        },
-        {
-            title: "Protecting aging parents from financial exploitation",
-            tag: "Elder Care",
-            date: "December 2024",
-            excerpt: "Elder financial abuse is more common than most families realize, and it's not always a stranger doing the exploiting. Practical steps you can take now — before a crisis — to safeguard a loved one's estate.",
-            url: "blog/elder-financial-protection.html",
-            image: ""
-        }
-    ];
-
     const POSTS_PER_PAGE = 5;
-
+    let allPosts = [];
     let activeTag = "All";
     let currentPage = 1;
 
-    // ── Build tag list from posts ──────────────────────────────
+    // Pull a <meta name="X"> value out of a parsed HTML document
+    function getMeta(doc, name) {
+        const el = doc.querySelector('meta[name="' + name + '"]');
+        return el ? el.getAttribute("content") : "";
+    }
+
+    // Fetch one post file and extract its metadata from <meta> tags
+    async function fetchPostMeta(filename) {
+        const url = "blog/" + filename;
+        try {
+            const res = await fetch(url);
+            if (!res.ok) throw new Error("HTTP " + res.status);
+            const html = await res.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, "text/html");
+            return {
+                title:   getMeta(doc, "post-title")   || doc.querySelector("title")?.textContent || filename,
+                date:    getMeta(doc, "post-date")     || "",
+                tag:     getMeta(doc, "post-tag")      || "General",
+                excerpt: getMeta(doc, "post-excerpt")  || "",
+                image:   getMeta(doc, "post-image")    || "",
+                url:     url
+            };
+        } catch (e) {
+            console.warn("Could not load " + filename, e);
+            return null;
+        }
+    }
+
+    // Load the manifest then fetch all posts in parallel
+    async function loadPosts() {
+        const statusEl = document.getElementById("status-msg");
+        try {
+            const res = await fetch("blog/posts.json");
+            if (!res.ok) throw new Error("Could not load posts.json");
+            const filenames = await res.json();
+
+            const results = await Promise.all(filenames.map(fetchPostMeta));
+            allPosts = results.filter(Boolean); // drop any that failed to load
+
+            statusEl.style.display = "none";
+            buildTags();
+            render();
+        } catch (e) {
+            statusEl.textContent = "Could not load posts. Please try again later.";
+            console.error(e);
+        }
+    }
+
+    // Build tag filter buttons from the loaded posts
     function buildTags() {
         const counts = {};
-        POSTS.forEach(p => {
-            counts[p.tag] = (counts[p.tag] || 0) + 1;
-        });
+        allPosts.forEach(p => { counts[p.tag] = (counts[p.tag] || 0) + 1; });
+
         const container = document.getElementById("tag-filters");
-        const allBtn = makeTagBtn("All", POSTS.length);
-        container.appendChild(allBtn);
+        container.innerHTML = "";
+
+        appendTagBtn(container, "All", allPosts.length);
         Object.entries(counts).forEach(([tag, count]) => {
-            container.appendChild(makeTagBtn(tag, count));
+            appendTagBtn(container, tag, count);
         });
     }
 
-    function makeTagBtn(tag, count) {
+    function appendTagBtn(container, tag, count) {
         const btn = document.createElement("button");
         btn.className = "tag-btn" + (tag === activeTag ? " active" : "");
         btn.innerHTML = tag + ' <span class="tag-count">(' + count + ')</span>';
@@ -469,20 +425,18 @@
             btn.classList.add("active");
             render();
         });
-        return btn;
+        container.appendChild(btn);
     }
 
-    // ── Render posts + pagination ──────────────────────────────
     function render() {
-        const filtered = activeTag === "All"
-            ? POSTS
-            : POSTS.filter(p => p.tag === activeTag);
-
-        const totalPages = Math.ceil(filtered.length / POSTS_PER_PAGE);
+        const filtered = activeTag === "All" ? allPosts : allPosts.filter(p => p.tag === activeTag);
+        const totalPages = Math.max(1, Math.ceil(filtered.length / POSTS_PER_PAGE));
         if (currentPage > totalPages) currentPage = 1;
 
-        const start = (currentPage - 1) * POSTS_PER_PAGE;
-        const pagePosts = filtered.slice(start, start + POSTS_PER_PAGE);
+        const pagePosts = filtered.slice(
+            (currentPage - 1) * POSTS_PER_PAGE,
+            currentPage * POSTS_PER_PAGE
+        );
 
         const list = document.getElementById("post-list");
         const empty = document.getElementById("empty-state");
@@ -496,8 +450,6 @@
         }
 
         renderPagination(totalPages);
-
-        // Scroll back to top of list smoothly
         list.scrollIntoView({ behavior: "smooth", block: "start" });
     }
 
@@ -559,9 +511,7 @@
         container.appendChild(next);
     }
 
-    // ── Init ──────────────────────────────────────────────────
-    buildTags();
-    render();
+    loadPosts();
 </script>
 
 </body>
